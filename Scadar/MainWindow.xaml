@@ -1,12 +1,17 @@
-﻿<Window x:Class="Scadar.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scadar"
+        xmlns:View="clr-namespace:Scadar.View" x:Class="Scadar.MainWindow"
+    xmlns:im="clr-namespace:Scadar.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+
+        <View:VolumeDetect HorizontalAlignment="Left" Height="278" Margin="50,46,0,0" VerticalAlignment="Top" Width="430"/>
+        <Image x:Name="image_s" HorizontalAlignment="Left" Height="100" Margin="557,253,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.69,-0.88"/>
+
     </Grid>
 </Window>

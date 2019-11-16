@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Scadar.ViewModel;
 
 namespace Scadar
 {
@@ -23,6 +24,8 @@ namespace Scadar
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel vm = new MainViewModel();
+            this.DataContext = vm;
         }
     }
 }
