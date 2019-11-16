@@ -69,6 +69,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Material\RelayCommand.cs" />
+    <Compile Include="Material\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
