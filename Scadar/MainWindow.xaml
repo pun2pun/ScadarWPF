@@ -10,7 +10,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
-        <View:VolumeDetect HorizontalAlignment="Left" Height="278" Margin="50,46,0,0" VerticalAlignment="Top" Width="430"/>
+        <View:VolumeDetect HorizontalAlignment="Left" Height="363" Margin="24,25,0,0" VerticalAlignment="Top" Width="656"/>
         <Image x:Name="image_s" HorizontalAlignment="Left" Height="100" Margin="557,253,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.69,-0.88"/>
 
     </Grid>

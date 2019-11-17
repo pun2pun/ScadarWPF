@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Scadar.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="450">
+             mc:Ignorable="d" Height="508.5" Width="861">
     <Grid>
-        <Image x:Name="videoPlayer" Margin="10,0,10,70" />
+        <Image x:Name="videoPlayer" Margin="10,0,0,70" HorizontalAlignment="Left" Width="430"
+               MouseEnter="videoPlayer_MouseEnter"
+               MouseLeave="videoPlayer_MouseLeave"
+               PreviewMouseLeftButtonDown="videoPlayer_PreviewMouseLeftButtonDown"/>
         <ComboBox x:Name="comboBox"
                   Width="167"
                   Height="21"
@@ -37,5 +39,8 @@
                 VerticalAlignment="Bottom"
                 Click="btnStop_Click"
                 Content="Stop" />
+        <RadioButton Content="Original" HorizontalAlignment="Left" Margin="470,24,0,0" VerticalAlignment="Top" IsChecked="{Binding Original}"/>
+        <RadioButton Content="Grayscaled" HorizontalAlignment="Left" Margin="470,45,0,0" VerticalAlignment="Top" IsChecked="{Binding Grayscaled}"/>
+        <ToggleButton Content="Select Color" HorizontalAlignment="Left" Margin="470,79,0,0" VerticalAlignment="Top" Width="92" Height="23"  IsChecked="{Binding PickingColor}"  />
     </Grid>
 </UserControl>
