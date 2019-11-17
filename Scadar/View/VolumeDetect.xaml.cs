@@ -39,6 +39,7 @@ namespace Scadar.View
         private bool _Grayscaled = false;
         private bool _inverted;
         private bool _pickingColor;
+        private bool _colorFiltered;
         private int _green;
         private int _red;
         private int _blue;
@@ -96,7 +97,12 @@ namespace Scadar.View
             get { return _pickingColor; }
             set { _pickingColor = value; this.OnPropertyChanged("PickingColor"); }
         }
-       
+        public bool ColorFiltered
+        {
+            get { return _colorFiltered; }
+            set { _colorFiltered = value; this.OnPropertyChanged("ColorFiltered"); }
+        }
+        
 
 
 
@@ -133,8 +139,12 @@ namespace Scadar.View
             {
                 BitmapImage bi;
                 using (var bitmap = (Bitmap)eventArgs.Frame.Clone())
-                {                
-                    if(Grayscaled)
+                {
+                    if (ColorFiltered)
+                    {
+                        new EuclideanColorFiltering(new AForge.Imaging.RGB((byte)Red, (byte)Green, (byte)Blue), Radius).ApplyInPlace(bitmap);
+                    }
+                    if (Grayscaled)
                     {
                         using (var grayscaledBitmap = Grayscale.CommonAlgorithms.BT709.Apply(bitmap))
                         {

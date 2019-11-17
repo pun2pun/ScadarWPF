@@ -79,6 +79,12 @@
     <Compile Include="Model\BitmapHelpers.cs" />
     <Compile Include="Model\MediaInformation.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\MonitoringPage.xaml.cs">
+      <DependentUpon>MonitoringPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Serial.xaml.cs">
+      <DependentUpon>Serial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\VolumeDetect.xaml.cs">
       <DependentUpon>VolumeDetect.xaml</DependentUpon>
     </Compile>
@@ -95,6 +101,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\curser\Cursor_picker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MonitoringPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Serial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +148,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\curser\picker.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Image\motor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

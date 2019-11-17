@@ -6,12 +6,72 @@
         xmlns:local="clr-namespace:Scadar"
         xmlns:View="clr-namespace:Scadar.View" x:Class="Scadar.MainWindow"
     xmlns:im="clr-namespace:Scadar.ViewModel"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        mc:Ignorable="d" WindowState="Maximized" Icon="Image/logo.png"
+        Title="Machine Monitoring" Height="924" Width="1410">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,-8,-31">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="179*"/>
+            <RowDefinition Height="181*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="1567*"/>
+        </Grid.ColumnDefinitions>
+        <StatusBar  Background="#FF824D9F" Height="28" VerticalAlignment="Bottom" Margin="0,0,8,31" Grid.ColumnSpan="2" Grid.Row="1">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock Foreground="White">Ready</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="1">
+                <ProgressBar Value="30" Width="80" Height="18"/>
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="2">
+                <TextBlock Foreground="White" >Set</TextBlock>
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="3">
+                <TextBlock Foreground="White" Text="Date :"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
 
-        <View:VolumeDetect HorizontalAlignment="Left" Height="363" Margin="24,25,0,0" VerticalAlignment="Top" Width="656"/>
-        <Image x:Name="image_s" HorizontalAlignment="Left" Height="100" Margin="557,253,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.69,-0.88"/>
+       
+        <TabControl  HorizontalAlignment="Left" Height="491" Margin="4,36,0,0" VerticalAlignment="Top" Width="344">
+            <TabItem Header="Genaral ">
+                <Grid Background="#FFE5E5E5" Margin="0,0,84,62"/>
+            </TabItem>
+            <TabItem Header="Serial">
+                <Grid Background="#FFE5E5E5" Margin="0,0,89,65">
+                    <View:Serial HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="249"/>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="18" Foreground="White" Background="#FF824D9F" TextWrapping="Wrap"  Text="  Configuration" VerticalAlignment="Top" Height="31" Width="353"/>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+
+        <TextBlock FontWeight="Bold" FontSize="18" Foreground="White" Background="#FF824D9F" TextWrapping="Wrap"  Text="      Measure quantity" VerticalAlignment="Top" Height="31" Grid.Column="1" Margin="10,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="10,0,8,0"/>
+        <View:VolumeDetect Grid.Column="1" Height="313" Margin="60,90,0,0" Width="1102" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBlock FontWeight="Bold" FontSize="18" Foreground="White" Background="#FF824D9F" TextWrapping="Wrap"  Text="     Monitoring line process" VerticalAlignment="Top" Height="31" Margin="0,5,8,0" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <View:MonitoringPage Grid.Column="1" HorizontalAlignment="Left" Height="268" Margin="0,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="949"/>
 
     </Grid>
+
+
 </Window>
+    
+    

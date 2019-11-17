@@ -26,11 +26,11 @@ namespace Scadar.ViewModel
     class MainViewModel : ViewModelBase
     {
 
-        VolumeDetect videopage;
+        
 
         public MainViewModel() {
 
-            videopage = new VolumeDetect();
+           
             
 
         }

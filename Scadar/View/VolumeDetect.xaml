@@ -4,43 +4,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Scadar.View"
-             mc:Ignorable="d" Height="508.5" Width="861">
-    <Grid>
-        <Image x:Name="videoPlayer" Margin="10,0,0,70" HorizontalAlignment="Left" Width="430"
+             mc:Ignorable="d" Height="280.5" Width="1067">
+    <Grid Margin="0,0,-2,-2">
+        <Image x:Name="videoPlayer" Margin="336,0,0,0" HorizontalAlignment="Left" Width="300"
                MouseEnter="videoPlayer_MouseEnter"
                MouseLeave="videoPlayer_MouseLeave"
-               PreviewMouseLeftButtonDown="videoPlayer_PreviewMouseLeftButtonDown"/>
+               PreviewMouseLeftButtonDown="videoPlayer_PreviewMouseLeftButtonDown" Height="250" VerticalAlignment="Top"/>
+
+        <Image x:Name="videoPlayer_origianl" Margin="10,0,0,0" HorizontalAlignment="Left" Width="304" 
+               MouseEnter="videoPlayer_MouseEnter"
+               MouseLeave="videoPlayer_MouseLeave"
+               PreviewMouseLeftButtonDown="videoPlayer_PreviewMouseLeftButtonDown" Height="250" VerticalAlignment="Top"/>
+
         <ComboBox x:Name="comboBox"
                   Width="167"
                   Height="21"
-                  Margin="10,0,0,25"
+                  Margin="688,229,0,0"
                   HorizontalAlignment="Left"
-                  VerticalAlignment="Bottom"
+                  VerticalAlignment="Top"
                   DisplayMemberPath="Name"
                   ItemsSource="{Binding VideoDevices}"
                   SelectedItem="{Binding CurrentDevice}" />
         <Label Width="167"
-               Height="24"
-               Margin="10,0,0,46"
+               Margin="688,200,0,58"
                HorizontalAlignment="Left"
-               VerticalAlignment="Bottom"
                Content="Select video source" />
         <Button Width="67"
                 Height="21"
-                Margin="213,0,0,25"
+                Margin="870,229,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
+                VerticalAlignment="Top"
                 Click="btnStart_Click"
                 Content="Start" />
         <Button Width="67"
                 Height="21"
-                Margin="296,0,0,25"
+                Margin="942,229,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
+                VerticalAlignment="Top"
                 Click="btnStop_Click"
                 Content="Stop" />
-        <RadioButton Content="Original" HorizontalAlignment="Left" Margin="470,24,0,0" VerticalAlignment="Top" IsChecked="{Binding Original}"/>
-        <RadioButton Content="Grayscaled" HorizontalAlignment="Left" Margin="470,45,0,0" VerticalAlignment="Top" IsChecked="{Binding Grayscaled}"/>
-        <ToggleButton Content="Select Color" HorizontalAlignment="Left" Margin="470,79,0,0" VerticalAlignment="Top" Width="92" Height="23"  IsChecked="{Binding PickingColor}"  />
+        <RadioButton Content="Original" HorizontalAlignment="Left" Margin="688,1,0,0" VerticalAlignment="Top" IsChecked="{Binding Original}"/>
+        <RadioButton Content="Grayscaled" Margin="781,1,212,0" VerticalAlignment="Top" IsChecked="{Binding Grayscaled}"/>
+        <CheckBox Content="ColorFiltered" HorizontalAlignment="Left" Margin="688,41,0,226" IsChecked="{Binding ColorFiltered}"/>
+        <Slider x:Name="slider_Copy"
+                Width="137"
+                Height="32"
+                Margin="720,61,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsEnabled="{Binding IsChecked,
+                                    ElementName=cbColorFiltering}"
+                Maximum="256"
+                Minimum="0"
+                Value="{Binding Radius}" />
+
+
+
+        <ToggleButton Content="Select Color" HorizontalAlignment="Left" Margin="688,109,0,0" VerticalAlignment="Top" Width="92" Height="23"  IsChecked="{Binding PickingColor}"  />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="250" Margin="10,0,0,0" VerticalAlignment="Top" Width="300"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="250" Margin="336,0,0,0" VerticalAlignment="Top" Width="300"/>
     </Grid>
 </UserControl>
